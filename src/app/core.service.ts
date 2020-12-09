@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoreService {
   // tslint:disable-next-line:variable-name
-  private _todoEntrySource = new Subject<string>();
-
-  todoEntry$ = this._todoEntrySource.asObservable();
+  private readonly _entriesSource = new BehaviorSubject<string[]>([]);
+  private readonly entries$ = this._entriesSource.asObservable();
 
   constructor() { }
-
-  sendTodoEntry(todoEntry: string): void {
-    this._todoEntrySource.next(todoEntry);
+  private get entries(): string[] {
+    return this._entriesSource.getValue();
+  }
+  private set entries(entry: string[]) {
+    this._entriesSource.next(entry);
+  }
+  addEntry(entry: string): void {
+    this.entries = [
+      ...this.entries, entry
+    ];
+  }
+  removeEntry(entry: string): void {
+    this.entries = this.entries.filter(e => e !== entry );
   }
 }

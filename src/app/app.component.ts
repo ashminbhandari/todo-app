@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CoreService} from './core.service';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import {CoreService} from './core.service';
 })
 
 export class AppComponent implements OnInit {
-  // tslint:disable-next-line:variable-name
-  constructor(private _coreService: CoreService) {}
   title = 'todo-app';
 
+  // tslint:disable-next-line:variable-name
+  constructor(private _coreService: CoreService) {}
   ngOnInit(): void {
     this._coreService.todoEntry$.subscribe(
       todoEntry => {

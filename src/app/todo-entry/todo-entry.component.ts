@@ -15,6 +15,6 @@ export class TodoEntryComponent implements OnInit {
   }
 
   sendTodoEntry(entryString: string): void {
-    this._coreService.sendTodoEntry(entryString);
+    this._coreService.addEntry(entryString);
   }
 }
