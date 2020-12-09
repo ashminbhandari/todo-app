@@ -1,1 +1,4 @@
-<p>todo-entry works!</p>
+<div class="todo-entry-container">
+  <input #todo_entry class = "input-box flex-grow-1" type="text" placeholder="Create a new entry"/>
+  <button (click)="sendTodoEntry(todo_entry.value)" class="yellow-button"> Add </button>
+</div>

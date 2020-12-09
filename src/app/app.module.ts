@@ -12,6 +12,7 @@ import { TodoEntryComponent } from './todo-entry/todo-entry.component';
   imports: [
     BrowserModule
   ],
+  exports: [TodoEntryComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
