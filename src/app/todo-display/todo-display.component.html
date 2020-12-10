@@ -1,0 +1,4 @@
+<div (click)="deleteTodoEntry(todo_entry.textContent)" class="todo-entry-display-container" *ngFor="let entry of entries">
+  <p #todo_entry class="todo-entry-text">{{entry}}</p>
+</div>
+

@@ -7,7 +7,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 export class CoreService {
   // tslint:disable-next-line:variable-name
   private readonly _entriesSource = new BehaviorSubject<string[]>([]);
-  private readonly entries$ = this._entriesSource.asObservable();
+  readonly entries$ = this._entriesSource.asObservable();
 
   constructor() { }
   private get entries(): string[] {

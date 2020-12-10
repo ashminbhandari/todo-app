@@ -1,9 +1,10 @@
 * {
   font-size: 25px;
+  font-family: Arial;
 }
 
 .app-container {
-  background-color: #FDFFFC;
+  background-color: white;
   height: 100vh;
   display: flex;
   margin: auto;
@@ -13,8 +14,8 @@
 }
 
 .todo-container {
-  background-color: #235789;
-  color: #FDFFFC;
+  background-color: black;
+  color: white;
   border-radius: 10px;
   padding: 10px;
   width: 80%;
@@ -22,20 +23,20 @@
 
 .input-box {
   background-color: transparent;
-  color: #FDFFFC;
+  color: white;
   outline: none;
   border: none;
 }
 
 ::placeholder {
-  color: #e2dfdf;
+  color: lightgrey;
 }
 
 .yellow-button {
-  background-color: #F1D302;
+  background-color: white;
   border: none;
   border-radius: 10px;
-  color: #393939;
+  color: black;
 }
 
 button:focus {
